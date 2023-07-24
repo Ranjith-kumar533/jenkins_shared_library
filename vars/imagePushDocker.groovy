@@ -1,4 +1,5 @@
 def call(String uname, String repo, String tag ){
+    sh "docker tag ${tag}:latest ${uanme}/${repo}:${tag}"
     def image = "${uname}/${repo}:${tag}"
     def dockerImage = docker.image("${image}")
     // This step should not normally be used in your script. Consult the inline help for details.
